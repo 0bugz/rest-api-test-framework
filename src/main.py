@@ -16,20 +16,20 @@ def sample_teardown(ctxt):
     print("you can release any resource")
 
 def pre_test_1(ctxt):
-    print("you could do any setup that is needed for the suite")
+    print("pre_test_1: you could do any setup that is needed for the test")
     ctxt["pre_test_1"] = "123"
     return ctxt
 
 def post_test_1(ctxt):
-    print("you could do any setup that is needed for the suite")
+    print("post_test_1: you could cleanup once the test is done")
     ctxt["post_test_1"] = "123"
     return ctxt
 
 driver = RestTestsuiteDriver("../tests", {
     'sample_setup': sample_setup,
     'sample_teardown': sample_teardown,
-    'pre_test': pre_test_1,
-    'post_test': post_test_1
+    'pre_test_1': pre_test_1,
+    'post_test_1': post_test_1
 })
 
 driver.run_tests()
