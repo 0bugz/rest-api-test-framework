@@ -17,10 +17,9 @@ suite:
      pre_test: pre_test_1
      post_test: post_test_1
      payload:
-       font:
-         color_theme: ACCENT_1
-         name: Times New Roman
-         size: '22'
+       color_theme: ACCENT_1
+       name: Times New Roman
+       size: 22
        heading: Heading 1
    - assertions:
        - resp.res1 == 123
