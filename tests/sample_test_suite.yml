@@ -1,0 +1,40 @@
+suite:
+   name: sample_suite
+   base_url: http://localhost:2345
+   setup: sample_setup
+   teardown: sample_teardown
+   tests:
+   - assertions:
+       - resp.res1 == 123
+       - resp.res2 + resp.res3 == 456
+       - resp.res3 and resp.res4 or resp.res5.res6== 789
+     headers:
+       - USEREMAIL: sew@gmail.com
+       - GMAIL: sew@gmail.com
+     method: GET
+     name: test_1
+     path: /abc1
+     pre_test: pre_test_1
+     post_test: post_test_1
+     payload:
+       font:
+         color_theme: ACCENT_1
+         name: Times New Roman
+         size: '22'
+       heading: Heading 1
+   - assertions:
+       - resp.res1 == 123
+       - resp.res2 == 456
+       - resp.res3 == 789
+     headers:
+       - USEREMAIL: sew@gmail.com
+       - GMAIL: sew@gmail.com
+     method: POST
+     name: test_2
+     path: /abc2
+     payload:
+       font:
+         color_theme: ACCENT_2
+         name: Times New Roman
+         size: '22'
+       heading: Heading 2
